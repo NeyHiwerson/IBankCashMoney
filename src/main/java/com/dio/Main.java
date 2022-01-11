@@ -17,8 +17,13 @@ public class Main {
         System.out.println("---------------------------------------");
         con01.depositar(150d);
         System.out.println(con01);
+        System.out.println("---------------------------------------");
         con01.transferir(50, con02);
         System.out.println(con02);
-
+        System.out.println("---------------------------------------");
+        con01.sacar(25);
+        System.out.println(con01);
+        System.out.println("---------------------------------------");
+        con02.extrato();
     }
 }
