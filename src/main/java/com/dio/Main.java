@@ -6,6 +6,7 @@ public class Main {
 
         Cliente cli01 = new Cliente("João", "15246879575");
         Conta con01 = new Conta(b01 , cli01, "CC", "01001");
+        cli01.setConta(con01);
 
         Cliente cli02 = new Cliente("Joaquina", "15246879588");
         Conta con02 = new Conta(b01 , cli02, "CC", "01002");

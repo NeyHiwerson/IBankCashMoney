@@ -3,13 +3,13 @@ package com.dio;
 
 
 public class Conta implements Operacoes {
-    Banco banco;
-    Cliente cliente;
-    String nomeCliente;
-    String tipoConta;
-    String numeroConta;
-    String agencia;
-    double saldo;
+    public Banco banco;
+    public Cliente cliente;
+    public String nomeCliente;
+    public String tipoConta;
+    public String numeroConta;
+    public String agencia;
+    public double saldo;
 
     public Conta(Banco banco, Cliente cliente, String tipoConta, String numeroConta) {
         this.banco = banco;

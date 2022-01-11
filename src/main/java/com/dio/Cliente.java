@@ -3,9 +3,9 @@ package com.dio;
 import java.util.Objects;
 
 public class Cliente {
-    String nome;
-    String cpf;
-    Conta conta;
+    public String nome;
+    public String cpf;
+    public Conta conta;
 
     public Cliente(String nome, String cpf) {
         this.nome = nome;
@@ -52,7 +52,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-         return "Cliente " + nome + " cpf " + cpf + " conta " + conta;
+         return "Cliente " + nome + " cpf " + cpf + " conta " + this.conta.numeroConta;
 
     }
 
