@@ -1,98 +1,37 @@
 package com.dio;
 
 
+abstract class Conta implements Operacoes {
+    protected Banco banco;
+    protected Cliente cliente;
+    protected int numeroConta;
+    protected String agencia;
+    protected double saldo;
 
-public class Conta implements Operacoes {
-    public Banco banco;
-    public Cliente cliente;
-    public String nomeCliente;
-    public String tipoConta;
-    public String numeroConta;
-    public String agencia;
-    public double saldo;
 
-    public Conta(Banco banco, Cliente cliente, String tipoConta, String numeroConta) {
-        this.banco = banco;
-        this.cliente = cliente;
-        this.nomeCliente = cliente.getNome();
-        this.tipoConta = tipoConta;
-        this.numeroConta = numeroConta;
-        this.agencia = this.banco.numeroAgencia;
-        this.saldo = 0d;
+    protected int getNumeroConta() { return numeroConta; }
 
-    }
-    public void vincularConta(Cliente cli, Conta con){
-        this.cliente.setConta(con);
-    }
+    protected String getAgencia() { return agencia; }
 
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-    }
-
-    public String getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(String tipoConta) {
-        this.tipoConta = tipoConta;
-    }
-
-    public String getNumeroConta() {
-        return numeroConta;
-    }
-
-    public void setNumeroConta(String numeroConta) {
-        this.numeroConta = numeroConta;
-    }
-
-    public String getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(String agencia) {
-        this.agencia = agencia;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
+    protected double getSaldo() { return saldo; }
 
     @Override
-    public void extrato() {
-        System.out.println(toString());
-    }
-
-    @Override
-    public void depositar() {
-
-    }
-
-    @Override
-    public void sacar() {
-
-    }
-
-    @Override
-    public void transferir() {
-
+    public void extrato(){
+        System.out.println(this.toString());
     }
 
     @Override
     public void depositar(double valorDeposito) {
         this.saldo = this.saldo + valorDeposito;
+        System.out.println("--Depósito de R$" + valorDeposito +
+                " reais efetuado com Sucesso--");
     }
 
     @Override
     public void sacar(double valorSaque) {
         this.saldo = this.saldo - valorSaque;
+        System.out.println("--Saque de R$" + valorSaque +
+                " reais efetuado com Sucesso--");
 
     }
 
@@ -103,13 +42,5 @@ public class Conta implements Operacoes {
 
     }
 
-    @Override
-    public String toString() {
-        return "Extrato " +
-                "Cliente: " + nomeCliente + '\n' +
-                "Tipo da conta: " + tipoConta + '\n' +
-                "Número da conta: " + numeroConta + '\n' +
-                "Agencia: " + agencia + '\n' +
-                "Saldo: R$" + saldo + "reais";
-    }
+
 }

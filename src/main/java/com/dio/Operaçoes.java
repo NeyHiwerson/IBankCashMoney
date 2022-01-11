@@ -2,9 +2,6 @@ package com.dio;
 
 interface Operacoes {
     void extrato();
-    void depositar();
-    void sacar();
-    void transferir();
 
     void depositar(double valorDeposito);
 

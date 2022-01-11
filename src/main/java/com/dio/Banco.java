@@ -3,10 +3,10 @@ package com.dio;
 import java.util.Objects;
 
 public class Banco {
-    public String name;
-    public String codigoBancario;
-    public String numeroAgencia;
-    public Conta conta;
+    private final String name;
+    private final String codigoBancario;
+    protected final String numeroAgencia;
+    //private Conta conta;// futura instalação de lista de contas e de clientes
 
     public Banco(String name, String codigoBancario, String numeroAgencia) {
         this.name = name;
@@ -14,29 +14,11 @@ public class Banco {
         this.numeroAgencia = numeroAgencia;
     }
 
-    public String getName() {
-        return name;
-    }
+    protected String getName() {  return name;   }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    protected String getCodigoBancario() {  return codigoBancario;  }
 
-    public String getCodigoBancario() {
-        return codigoBancario;
-    }
-
-    public void setCodigoBancario(String codigoBancario) {
-        this.codigoBancario = codigoBancario;
-    }
-
-    public String getNumeroAgencia() {
-        return numeroAgencia;
-    }
-
-    public void setNumeroAgencia(String numeroAgencia) {
-        this.numeroAgencia = numeroAgencia;
-    }
+    protected String getNumeroAgencia() {  return numeroAgencia;   }
 
     @Override
     public boolean equals(Object o) {
