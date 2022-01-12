@@ -6,7 +6,7 @@ public class Banco {
     private final String name;
     private final String codigoBancario;
     protected final String numeroAgencia;
-    //private Conta conta;// futura instalação de lista de contas e de clientes
+
 
     public Banco(String name, String codigoBancario, String numeroAgencia) {
         this.name = name;
